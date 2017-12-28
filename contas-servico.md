@@ -29,13 +29,13 @@ Você pode escolher uma das contas especiais para serviço, ou especificar uma c
  Uma conta de serviço limitada que é muito similar a conta **Network Service** e é designada para rodar serviços padrões 
 menos privilegiados. Toda caso, diferentemente da conta **Network Service**, a conta **LocalService**  não tem a 
 habilidade de acessar a rede por exemplo, como faria uma máquina utilizando o usuário **Anonymous**.
-*. Nome: NT AUTHORITY\LocalService
-*. Esta conta não tem senha (qualquer senha definida será ignorada)
-*. HKCU representa a conta de usuário LocalService
-*. Tem privilégios mínimos, limitados ao computador local
-*. Apresenta a autenticação **anonymous** se precisar acessar a rede
-*. SID: S-1-5-19
-*. Tem seu próprio perfil dentro de da chave de registro HKEY_USERS (HKEY_USERS\S-1-5-19)
+* - Nome: NT AUTHORITY\LocalService
+* - Esta conta não tem senha (qualquer senha definida será ignorada)
+* - HKCU representa a conta de usuário LocalService
+* - Tem privilégios mínimos, limitados ao computador local
+* - Apresenta a autenticação **anonymous** se precisar acessar a rede
+* - SID: S-1-5-19
+* - Tem seu próprio perfil dentro de da chave de registro HKEY_USERS (HKEY_USERS\S-1-5-19)
 
      
 
