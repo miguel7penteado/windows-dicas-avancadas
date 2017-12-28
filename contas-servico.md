@@ -28,7 +28,8 @@ Você pode escolher uma das contas especiais para serviço, ou especificar uma c
 
  Uma conta de serviço limitada que é muito similar a conta **Network Service** e é designada para rodar serviços padrões 
 menos privilegiados. Toda caso, diferentemente da conta **Network Service**, a conta **LocalService**  não tem a 
-habilidade de acessar a rede por exemplo, como faria uma máquina utilizando o usuário **Anonymous**.
+habilidade de acessar recursos de credenciais de rede por exemplo. Se o fizer, não poderá identificar a máquina e terá que se logar como  **Anonymous**.
+
 * - Nome: NT AUTHORITY\LocalService
 * - Esta conta não tem senha (qualquer senha definida será ignorada)
 * - HKCU representa a conta de usuário LocalService
@@ -39,26 +40,28 @@ habilidade de acessar a rede por exemplo, como faria uma máquina utilizando o u
 
      
 
-### 2. NetworkService account
+### 2. Conta NetworkService (Ou Serviços de rede)
 
-    Limited service account that is meant to run standard privileged services. This account is far more limited than Local System (or even Administrator) but still has the right to access the network as the machine (see caveat above).
-        NT AUTHORITY\NetworkService
-        the account has no password (any password information you provide is ignored)
-        HKCU represents the NetworkService user account
-        has minimal privileges on the local computer
-        presents the computer's credentials (e.g. MANGO$) to remote servers
-        SID: S-1-5-20
-        has its own profile under the HKEY_USERS registry key (HKEY_USERS\S-1-5-20)
-        If trying to schedule a task using it, enter NETWORK SERVICE into the Select User or Group dialog
+ É Uma conta de serviço de privilégio limitado que permite ao processo acessar os recursos de rede do sistema operacional. Esta conta ainda é muito limitada se comparada a conta **Local System** (ou mesmo a mais limitada que a conta Administrator) mas ao menos tem direito de acessar a rede se identificando com as credenciais da máquina.
+ 
+* - NT AUTHORITY\NetworkService
+* - Esta conta não tem senha (qualquer senha definida será ignorada)
+* - HKCU representa a conta de usuário **NetworkService**
+* - Tem privilégios mínimos no computador local
+* - Apresenta as credenciais do computador (e.g. MANGO$) a servidores remotos.
+* - SID: S-1-5-20
+* - Tem seu proprio perfil dentro da chave de registro HKEY_USERS (HKEY_USERS\S-1-5-20)
+* - Se está tentando agendar uma tarefa usando essa conta, entre com NETWORK SERVICE dentro do dialogo selecionar usuário ou grupo.
 
      
 
-### 3. LocalSystem account (dangerous, don't use!)
+### 3. Conta LocalSystem (ou Sistema Local)
 
-    Completely trusted account, more so than the administrator account. There is nothing on a single box that this account cannot do, and it has the right to access the network as the machine (this requires Active Directory and granting the machine account permissions to something)
-        Name: .\LocalSystem (can also use LocalSystem or ComputerName\LocalSystem)
-        the account has no password (any password information you provide is ignored)
-        SID: S-1-5-18
-        does not have any profile of its own (HKCU represents the default user)
-        has extensive privileges on the local computer
-        presents the computer's credentials (e.g. MANGO$) to remote servers
+ Uma conta completamente confiavel, mais do que a conta de **administrator**. Não há nada no computador local que esta conta não possa fazer, e ela pode acessar a rede se identificando como a máquina (Isto requer um AD e a permissão da máquina de fazer isso)
+ 
+* - Name: .\LocalSystem (pode usar **LocalSystem** ou **NomeComputador\LocalSystem**)
+* - Esta conta não tem senha (qualquer senha definida será ignorada)
+* - SID: S-1-5-18
+* - Não tem perfil (HKCU representa o usuário default user)
+* - tem privilégios totais
+* - Apresenta as credenciais do computador (e.g. MANGO$) a servidores remotos.
