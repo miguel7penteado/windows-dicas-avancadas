@@ -22,6 +22,9 @@ Um administrador de sistema que quer associar contas "na mão" para um serviço 
 
 Se um serviço precisa reconhecer outro serviço antes de compartilhar informação, o segundo serviço pode utilizar a mesma conta do primeiro serviço, ou ele pode rodar em uma conta reconhecida pelo primeiro serviço. Serviços que rodam distribuidos na rede devem rodar em contas de domínio.
 
+Vale lembrar que no registro do windows, os serviços ficam armazenados em `HKEY_LOCAL_MACHINE\System\CurrentControlSet\Services`
+
+
 Você pode escolher uma das contas especiais para serviço, ou especificar uma conta de usuário para o serviço:
 
 
