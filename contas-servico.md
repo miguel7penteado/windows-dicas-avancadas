@@ -18,26 +18,26 @@ O SCM não mantém senhas das contas de usuário-serviço.
 Se uma senha expira, o logon falha e o serviço não inicia. 
 Um administrador de sistema que quer associar contas "na mão" para um serviço pode definir uma senha que nunca expira.
 
-If a service needs to recognize another service before sharing its information, the second service can either use the same account as the first service, or it can run in an account belonging to an alias that is recognized by the first service. Services that need to run in a distributed manner across the network should run in domain-wide accounts.
+Se um serviço precisa reconhecer outro serviço antes de compartilhar informação, o segundo serviço pode utilizar a mesma conta do primeiro serviço, ou ele pode rodar em uma conta reconhecida pelo primeiro serviço. Serviços que rodam distribuidos na rede devem rodar em contas de domínio.
 
-You can specify one of the following special accounts instead of specifying a user account for the service:
+Você pode escolher uma das contas especiais para serviço, ou especificar uma conta de usuário para o serviço:
 
 
 
-    LocalService account (preferred)
+### 1. Conta LocalService (ou Serviço Local):
 
-    A limited service account that is very similar to Network Service and meant to run standard least-privileged services. However, unlike Network Service it has no ability to access the network as the machine accesses the network as an Anonymous user.
-        Name: NT AUTHORITY\LocalService
-        the account has no password (any password information you provide is ignored)
-        HKCU represents the LocalService user account
-        has minimal privileges on the local computer
-        presents anonymous credentials on the network
-        SID: S-1-5-19
-        has its own profile under the HKEY_USERS registry key (HKEY_USERS\S-1-5-19)
+ Uma conta de serviço limitada que é muito similar a conta **Network Service** e é designada para rodar serviços padrões menos privilegiados. Toda caso, diferentemente da conta **Network Service**, a conta **LocalService**  não tem a habilidade de acessar a rede por exemplo, como faria uma máquina utilizando o usuário **Anonymous**.
+*. Nome: NT AUTHORITY\LocalService
+*. Esta conta não tem senha (qualquer senha definida será ignorada)
+*. HKCU representa a conta de usuário LocalService
+*. Tem privilégios mínimos, limitados ao computador local
+*. Apresenta a autenticação **anonymous** se precisar acessar a rede
+*. SID: S-1-5-19
+*. Tem seu próprio perfil dentro de da chave de registro HKEY_USERS (HKEY_USERS\S-1-5-19)
 
      
 
-    NetworkService account
+### 2. NetworkService account
 
     Limited service account that is meant to run standard privileged services. This account is far more limited than Local System (or even Administrator) but still has the right to access the network as the machine (see caveat above).
         NT AUTHORITY\NetworkService
@@ -51,7 +51,7 @@ You can specify one of the following special accounts instead of specifying a us
 
      
 
-    LocalSystem account (dangerous, don't use!)
+### 3. LocalSystem account (dangerous, don't use!)
 
     Completely trusted account, more so than the administrator account. There is nothing on a single box that this account cannot do, and it has the right to access the network as the machine (this requires Active Directory and granting the machine account permissions to something)
         Name: .\LocalSystem (can also use LocalSystem or ComputerName\LocalSystem)
