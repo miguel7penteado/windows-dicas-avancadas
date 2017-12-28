@@ -1,4 +1,6 @@
-# Serviços no Windows - Contas de Usuário tipo Serviço
+# Serviços no Windows - 
+
+## 1. Contas de Usuário tipo Serviço
 
 
 Cada serviço executa limitado as permissões de uma conta de usuário. Quando se trata de uma conta de serviço, o usuário e a senha
@@ -24,7 +26,7 @@ Você pode escolher uma das contas especiais para serviço, ou especificar uma c
 
 
 
-### 1. Conta LocalService (ou Serviço Local):
+### 1.1 Conta LocalService (ou Serviço Local):
 
  Uma conta de serviço limitada que é muito similar a conta **Network Service** e é designada para rodar serviços padrões 
 menos privilegiados. Toda caso, diferentemente da conta **Network Service**, a conta **LocalService**  não tem a 
@@ -40,7 +42,7 @@ habilidade de acessar recursos de credenciais de rede por exemplo. Se o fizer, n
 
      
 
-### 2. Conta NetworkService (Ou Serviços de rede)
+### 1.2 Conta NetworkService (Ou Serviços de rede)
 
  É Uma conta de serviço de privilégio limitado que permite ao processo acessar os recursos de rede do sistema operacional. Esta conta ainda é muito limitada se comparada a conta **Local System** (ou mesmo a mais limitada que a conta Administrator) mas ao menos tem direito de acessar a rede se identificando com as credenciais da máquina.
  
@@ -55,7 +57,7 @@ habilidade de acessar recursos de credenciais de rede por exemplo. Se o fizer, n
 
      
 
-### 3. Conta LocalSystem (ou Sistema Local)
+### 1.3 Conta LocalSystem (ou Sistema Local)
 
  Uma conta completamente confiavel, mais do que a conta de **administrator**. Não há nada no computador local que esta conta não possa fazer, e ela pode acessar a rede se identificando como a máquina (Isto requer um AD e a permissão da máquina de fazer isso)
  
@@ -65,3 +67,10 @@ habilidade de acessar recursos de credenciais de rede por exemplo. Se o fizer, n
 * - Não tem perfil (HKCU representa o usuário default user)
 * - tem privilégios totais
 * - Apresenta as credenciais do computador (e.g. MANGO$) a servidores remotos.
+
+## 2. Contas virtuais de Usuário tipo Serviço
+
+
+# Referencias
+[StackOverflow - https://stackoverflow.com/questions/510170/the-difference-between-the-local-system-account-and-the-network-service-acco](https://stackoverflow.com/questions/510170/the-difference-between-the-local-system-account-and-the-network-service-acco)
+[msdn - https://msdn.microsoft.com/en-us/library/ms686005(v=VS.85).aspx](https://msdn.microsoft.com/en-us/library/ms686005(v=VS.85).aspx)
