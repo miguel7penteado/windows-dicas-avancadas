@@ -64,7 +64,7 @@ habilidade de acessar recursos de credenciais de rede por exemplo. Se o fizer, n
 
  Uma conta completamente confiavel, mais do que a conta de **administrator**. Não há nada no computador local que esta conta não possa fazer, e ela pode acessar a rede se identificando como a máquina (Isto requer um AD e a permissão da máquina de fazer isso)
  
-* - Name: .\LocalSystem (pode usar **LocalSystem** ou **NomeComputador\LocalSystem**)
+* - Name: NT Authority\System
 * - Esta conta não tem senha (qualquer senha definida será ignorada)
 * - SID: S-1-5-18
 * - Não tem perfil (HKCU representa o usuário default user)
