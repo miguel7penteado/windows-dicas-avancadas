@@ -1,5 +1,25 @@
 
 ```cmd
+
+:: Limpando o cache do DNS
+ipconfig /flushdns
+
+:: Registrando o lease no servidor DHCP
+ipconfig /registerdns
+
+:: Liberando o lease
+ipconfig /release
+
+:: Renovando o lease
+ipconfig /renew
+
+:: Resetando o estado da bibloteca winsocket
+netsh winsock reset
+
+```
+
+
+```cmd
 :: Listar as interfaces
 netsh interface ipv4 show interface
 
