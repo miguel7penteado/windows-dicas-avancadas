@@ -1,4 +1,4 @@
-Construindo discos do Windows PE no Linux | James Reynolds {"mainEntityOfPage":{"@type":"WebPage","@id":"/linux/windows/2019/01/12/windows-pe-isos-on-linux.html"},"@type":"BlogPosting","url":"/linux/windows/2019/01/12/windows-pe-isos-on-linux.html","headline":"Building Windows PE disks on Linux","dateModified":"2019-01-12T16:30:30+00:00","datePublished":"2019-01-12T16:30:30+00:00","description":"What?","@context":"http://schema.org"}  if(!(window.doNotTrack === "1" || navigator.doNotTrack === "1" || navigator.doNotTrack === "yes" || navigator.msDoNotTrack === "1")) { (function(i,s,o,g,r,a,m){i\['GoogleAnalyticsObject'\]=r;i\[r\]=i\[r\]||function(){ (i\[r\].q=i\[r\].q||\[\]).push(arguments)},i\[r\].l=1*new Date();a=s.createElement(o), m=s.getElementsByTagName(o)\[0\];a.async=1;a.src=g;m.parentNode.insertBefore(a,m) })(window,document,'script','https://www.google-analytics.com/analytics.js','ga'); ga('create', 'UA-139075725-1', 'auto'); ga('send', 'pageview'); } 
+# Construindo discos do Windows PE no Linux 
 
 [James Reynolds](/)
 
