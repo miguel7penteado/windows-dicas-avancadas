@@ -3,6 +3,17 @@ Quem tarbalha com T.I. , seja em infra-estrutura, suporte, desenvolvimento ou an
 armadilhas das limitações deste sistema. Faço menção ao suporte a operações de linha de comando no Windows.
 Por isso vou colocar alguns tópicos interessantes aqui.
 
+## Ativando o Terminal Remoto (Remote Desktop)
+
+Desbloqueando o serviço via linha de comando
+```powershell
+Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -value 0
+```
+Abrindo porta do serviço no firewall do windows 10 via linha de comando
+```powershell
+Enable-NetFirewallRule -DisplayGroup "Área de Trabalho Remota"
+```
+
 ## Apagando Perfis de Usuário no Windows
 Existe uma ferramenta (e quando falamos de windows, normalmente não falamos de código aberto) chamada [Deflprof2](https://www.sepago.com/blog/2011/05/01/new-free-delprof2-user-profile-deletion-tool), 
 criada por um 
