@@ -13,6 +13,11 @@ Abrindo porta do serviço no firewall do windows 10 via linha de comando
 ```powershell
 Enable-NetFirewallRule -DisplayGroup "Área de Trabalho Remota"
 ```
+Ativando a virtualização hyper-V e o suporte a Containers do windows
+```powershell
+powershell Enable-WindowsOptionalFeature -Online -FeatureName Microsoft-Hyper-V,Containers -All
+```
+
 
 ## Apagando Perfis de Usuário no Windows
 Existe uma ferramenta (e quando falamos de windows, normalmente não falamos de código aberto) chamada [Deflprof2](https://www.sepago.com/blog/2011/05/01/new-free-delprof2-user-profile-deletion-tool), 
