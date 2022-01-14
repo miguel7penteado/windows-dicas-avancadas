@@ -1,6 +1,8 @@
 
 # Adicionando funcionalidades do Windows 10 via linha de comando
 
+
+Entre na linha de comandos do powershell:
 ```powershell
 Set-ItemProperty -Path "HKLM:\SOFTWARE\Policies\Microsoft\Windows\WindowsUpdate\AU" -Name "UseWUServer" -Value 0
 Restart-Service wuauserv
