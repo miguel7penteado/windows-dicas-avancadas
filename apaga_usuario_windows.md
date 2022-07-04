@@ -18,6 +18,12 @@ Exit
 ```
 
 2- Usuários em sí:
+Liste os usuários locais do sistema:
+
+```cmd
+net user
+```
+Em seguida escolha os usuários que deseja e apague-os
 
 ```cmd
 net user usuário1 /delete
