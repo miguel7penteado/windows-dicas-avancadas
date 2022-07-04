@@ -3,6 +3,8 @@
 
 Apaga todos os usuários locais exceto `usuario1` e `usuario2`
 
+1-Perfis
+
 ```powershell
 $perfis = $null
 
@@ -14,3 +16,12 @@ $perfis | Remove-WmiObject
 
 Exit
 ```
+
+2- Usuários em sí:
+
+```cmd
+net user usuário1 /delete
+net user usuário2 /delete
+net user usuário3 /delete
+```
+
