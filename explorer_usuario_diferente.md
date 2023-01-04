@@ -1,5 +1,5 @@
 1. Run **regedit.exe** elevated.
-2. Take ownership of **HKEY_CLASSES_ROOT\AppID\{CDCBCFCA-3CDC-436f-A4E2-0E02075250C2}**.
+2. Take ownership of **HKEY_CLASSES_ROOT\AppID\\{CDCBCFCA-3CDC-436f-A4E2-0E02075250C2}**.
 3. Rename the **RunAs** value to `_RunAs`.
 4. Create a new shortcut on your Desktop for **C:\Windows\System32\runas.exe**.
 5. Name it something like `Admin-Explorer`.
