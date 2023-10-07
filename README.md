@@ -45,27 +45,27 @@ Volumes são as organizações lógicas do disco da forma como o windows reconhe
 
 Veja qual é o volume da partição EFI do seu disco. No caso da minha, é 
 ```cmd
-DISKPART> list vol 
+DISKPART> list volume
 
-Volume ####  Ltr  Label        Fs     Type        Size     Status     Info
+  Volume No.  Ltr  Rótulo       Fs     Tipo        Tamanho  Status     Informações
   ----------  ---  -----------  -----  ----------  -------  ---------  --------
-  Volume 0     C                NTFS   Partition    464 GB  Healthy    Boot
-  Volume 1         Recovery     NTFS   Partition    450 MB  Healthy    Hidden
-  Volume 2                      FAT32  Partition     99 MB  Healthy    System
-  Volume 3                      NTFS   Partition    847 MB  Healthy    Hidden
+  Volume 0     D   ESD-ISO      UDF    CD-ROM      4401 MB  Íntegro
+  Volume 1     C                NTFS   Partição     151 GB  Íntegro    Iniciali
+  Volume 2                      FAT32  Partição     100 MB  Íntegro    Sistema
+
 ```
-Minha partição de UEFO foi reconhecida como "volume 2". Ela é sempre um volume de aproximadamente 100 megabytes formatado em **FAT32**
+Minha partição de UEFI foi reconhecida como "volume 2". Ela é sempre um volume de aproximadamente 100 megabytes formatado em **FAT32**
 
 Selecione o volume 
 ```cmd
 DISKPART> select vol 2
-Volume 2 is the selected volume.
+O volume 2 está selecionado.
 ```
 
 Mapeie o volume com uma letra de unidade para você poder trabalhar nele pela linha de comando do DOS
 ```cmd
 DISKPART> assign letter=z
-DiskPart successfully assigned the drive letter or mount point.
+DiskPart atribuiu com êxito a letra de unidade ou o ponto de montagem.
 ```
 
 Reconstruir o diretório de boot do windows na partição EFI
