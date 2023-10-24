@@ -15,13 +15,14 @@ netsh advfirewall firewall add rule name="File and Printer Sharing (Echo Request
 Liberar o compartilhamento de impressoras
 ```cmd
 netsh advfirewall firewall set rule group="Compartilhamento de Arquivo e Impressora" new enable=Yes
+;; Inglês
 ;;netsh advfirewall firewall set rule group="File and Printer Sharing" new enable=Yes
 ```
 
 Liberar a descoberta de Rede
 ```cmd
-;; Inglês
 netsh advfirewall firewall set rule group="Descoberta de Rede" new enable=Yes
+;; Inglês
 ;;netsh advfirewall firewall set rule group="Network Discovery" new enable=Yes
 ```
 
